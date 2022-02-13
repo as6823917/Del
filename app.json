@@ -1,45 +1,50 @@
 {
-    "name": "AutoDelete",
-    "description": "Simple telegram userbot for deleting messages in group.",
-    "logo": "https://telegra.ph/file/9ba35ac3b1d0f09e21b7d.jpg",
+    "name": "File To Link Bot",
+    "logo": "https://telegra.ph//file/03226efb5763203163922.jpg",
+    "description": "This bot will give permanent Download and Stream links for telegram files",
     "keywords": [
+        "stream",
+        "download",
         "telegram",
-        "pyrogram",
-        "telegram-bot",
-        "ArunSince2005"
+        "FileToLink",
+        "bot",
+        "link"
     ],
-    "repository": "https://github.com/Arun-TG/AutoDelete",
-    "website": "t.me/ArunSince2005",
-    "success_url": "https://t.me/Arun_TG",
+    "repository": "https://github.com/as6823917/FileToLink",
     "env": {
-        "API_HASH": {
-            "description": "You API HASH from my.telegram.org",
-            "value": ""
-        },
         "API_ID": {
-            "description": "You API ID from my.telegram.org",
-            "value": ""
+            "description": "Get it from  https://my.telegram.org"
         },
-        "SESSION": {
-            "description": "Pyrogram Session String Of Telegram Account",
-            "value": ""
+        "API_HASH": {
+            "description": "Get it from  https://my.telegram.org"
         },
-        "ADMINS": {
-            "description": "ID Of Admins",
-            "value": ""
+        "BOT_TOKEN": {
+            "description": "Get it from @BotFather"
         },
-        "TIME": {
-            "description": "Time Duration For Deletion (In Seconds)",
-            "value": ""
+        "APP_NAME": {
+            "description": "Copy Paste app name that you type it above"
         },
-        "GROUPS": {
-            "description": "ID of Groups where the userbot works",
-            "value": ""
+        "ARCHIVE_CHANNEL_ID": {
+            "description": "Create a new channel, post anything in the channel, forward the post to @message_ids_bot, now copy paste chat_forward in this field"
+        },
+        "Start_Message": {
+            "description": "The bot will send this message when user send /start",
+            "value": "Hello, Send me any file to get download and Stream links"
+        },
+        "Session_String": {
+            "description": "[Optional] Pyrogram Session String, use session_generator.py to generate it, If you don't add it the bot will create a new session every Restarting.",
+            "required": false
+        },
+        "Bot_Channel_UserName": {
+            "description": "[Optional] The UserName of any channel to force users to join it before using the bot, Make sure to make the bot admin in this channel",
+            "required": false
         }
     },
-    "buildpacks": [
-        {
-            "url": "heroku/python"
+    "stack": "heroku-20",
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "free"
         }
-    ]
+    }
 }
